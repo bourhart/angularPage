@@ -21,4 +21,8 @@ export class CarritoService {
   getItemsCarrito() {
     return this.items;
   }
+
+  getProductData() {
+    returh this.http.get<{nombre:string, precio:number, descripcion:string}[]>('/assets/perfumes.json');
+  }
 }
