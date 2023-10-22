@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Producto } from './producto';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +25,6 @@ export class CarritoService {
   }
 
   getProductData() {
-    return this.http.get<{nombre:string, precio:number, descripcion:string, identificador: string}[]>('/assets/perfumes.json');
+    return this.http.get<{identificador: number, nombre: string, categoria: string, precio: number, descripcion: string}[]>('assets/perfumes.json');
   }
 }

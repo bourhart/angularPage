@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { Observable } from 'rxjs';
 import { CarritoService } from '../carrito.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-lista-productos',
@@ -9,14 +9,14 @@ import { CarritoService } from '../carrito.service';
   styleUrls: ['./lista-productos.component.css']
 })
 export class ListaProductosComponent implements OnInit {
-  constructor(
-    private carritoService: CarritoService
-  ) { }
+  
+  @Input()
+  category: string = "";
 
-  infoProductos!: Observable<{ nombre: string, precio:number, descripcion: string, identificador: string }[]>;
+  constructor(private carritoService: CarritoService) { }
+  infoProductos!: Observable<{identificador: number, nombre: string, categoria: string, precio: number, descripcion: string}[]>;
 
   ngOnInit(): void {
     this.infoProductos = this.carritoService.getProductData();
-    console.log(this.infoProductos);
   }
 }
