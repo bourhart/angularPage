@@ -4,7 +4,7 @@
   <div *ngIf="category" class="contenedor">
     <div *ngIf="producto.categoria==category" class="producto">
       <h3>
-        <a [title]="producto.nombre + 'details'" [routerLink]="['/productos', producto.identificador]">
+        <a [title]="producto.nombre + 'details'" [routerLink]="['/producto', producto.identificador]">
           <img src="assets/{{ category }}/{{ producto.nombre }}.png" />
         </a>
       </h3>

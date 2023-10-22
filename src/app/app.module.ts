@@ -15,6 +15,7 @@ import {ListaProductosComponent} from  './lista-productos/lista-productos.compon
 
 import { HttpClientModule } from '@angular/common/http';
 import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
+import { DireccionComponent } from './direccion/direccion.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
     NinoComponent,
     ListaProductosComponent,
     DetallesProductoComponent,
+    DireccionComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,8 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
       { path: 'hombre', component: HombreComponent },
       { path: 'mujer', component: MujerComponent },
       { path: 'nino', component: NinoComponent },
+      { path: 'producto/:idProducto', component: DetallesProductoComponent },
+      { path: 'direccion', component: DireccionComponent },
     ])
   ],
   providers: [],
